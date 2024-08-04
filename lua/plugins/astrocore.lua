@@ -53,6 +53,7 @@ return {
         -- second key is the lefthand side of the map
         ["QA"] = { "<cmd>qa<cr>", desc = "Close all buffers" },
         ["SS"] = { "<cmd>w<cr>", desc = "Save current buffer" },
+        ["<Leader><space>"] = { "<cmd>noh<cr>", desc = "Clear search highlights (noh)" },
 
         -- navigate buffer tabs
         [")"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },

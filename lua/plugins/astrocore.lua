@@ -69,6 +69,9 @@ return {
         },
 
         ["<Leader>bt"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+
+        --Window resizing
+        ["=="] = { "<cmd>wincmd =<cr>", desc = "Resize all windows to be equal height and width" },
       i = { -- Insert mode mappings
         ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
         ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },

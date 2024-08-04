@@ -1,3 +1,35 @@
+--============================================================================--
+--
+-- https://github.com/AstroNvim/template/blob/main/lua/plugins/astrocore.lua
+--
+--============================================================================--
+--
+-- This Lua script is a configuration file for the AstroNvim plugin for Neovim.
+-- It's structured as a lua table that is returned when the script is run,
+-- containing several nested tables configuring various aspects of AstroNvim.
+--
+-- Key sections include:
+--
+--   FEATURES: Enables or disables core features like autopairs, completion,
+--     diagnostics, URL highlighting, and notifications. It also sets global
+--     limits for large files.
+--
+--   DIAGNOSTICS: Configures the behavior of diagnostics, controlling the use of
+--     virtual text and underlines.
+--
+--   OPTIONS: Configures vim options and global vim variables. It includes
+--     settings for relativenumber, virtualedit, shiftround, listchars, etc.
+--
+--   MAPPINGS: Configures key mappings for different modes (normal, terminal,
+--     visual, and insert). Each sub-table contains key-value pairs where the
+--     key is the key combination and the value is another table that specifies
+--     the command to run and a description of what the command does.
+--
+-- This Configuration file includes and extends the default AstroNvim core
+-- configuration with my personal preferences.
+--
+--------------------------------------------------------------------------------
+
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!

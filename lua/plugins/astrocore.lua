@@ -91,6 +91,9 @@ return {
       t = { -- Close floating terminal
         ["<C-T>"] = { "<cmd>ToggleTerm<cr>" },
       },
+      v = { -- Visual mode mappings
+        ["gq"] = { "<cmd> normal gw<cr>", desc = "Format" }, -- Add "gq" format back via an alias.
+      },
       i = { -- Insert mode mappings
         ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
         ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },

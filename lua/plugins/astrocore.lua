@@ -52,6 +52,10 @@ return {
         [")"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["("] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
+        -- Navigating actual tabs, positionined at the end of the tabline "named" 1,2,3,etc.
+        ["<Leader>1"] = { "<cmd>tabprev<cr>", desc = "Prevtab" },
+        ["<Leader>2"] = { "<cmd>tabnext<cr>", desc = "Next tab" },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()

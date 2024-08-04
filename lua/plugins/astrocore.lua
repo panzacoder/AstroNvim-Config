@@ -76,6 +76,9 @@ return {
         -- NeoTree
         ["<Leader>D"] = { "<cmd>:Neotree reveal<cr>", desc = "Reveal current buffer in Explorer" }, -- <Leader>o is the default, but this mapping is muscle memory from NERDTree
 
+        -- Config
+        ["<LocalLeader>z"] = { "<CMD>Lazy<CR>", desc = "Open Lazy configuration" },
+
         -- Open floating terminal
         ["<C-t>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Launch floating terminal" },
       },

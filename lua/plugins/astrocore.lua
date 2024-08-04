@@ -34,6 +34,10 @@ return {
         wrap = false, -- sets vim.opt.wrap
         virtualedit = "all", -- allows the cursor to go anywhere, not just the beginning of lines when moving with j and k
         shiftround = true, -- when indenting, round up or down to align with the nearest multiple of shiftwidth
+        listchars = { --Use the same symbols as TextMate for tabstops and EOLs
+          tab = "▸ ",
+          eol = "¬",
+        },
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
@@ -75,6 +79,9 @@ return {
 
         -- NeoTree
         ["<Leader>D"] = { "<cmd>:Neotree reveal<cr>", desc = "Reveal current buffer in Explorer" }, -- <Leader>o is the default, but this mapping is muscle memory from NERDTree
+
+        -- UI tweaks
+        ["<Leader>ue"] = { "<cmd>set list!<cr>", desc = "Toggle showing line ending and tab characters" }, -- the listchars setting from above in the opts -> options -> opt table
 
         -- Diagnostics
         ["<LocalLeader>e"] = {

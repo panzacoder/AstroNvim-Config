@@ -76,6 +76,12 @@ return {
         -- NeoTree
         ["<Leader>D"] = { "<cmd>:Neotree reveal<cr>", desc = "Reveal current buffer in Explorer" }, -- <Leader>o is the default, but this mapping is muscle memory from NERDTree
 
+        -- Diagnostics
+        ["<LocalLeader>e"] = {
+          "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>",
+          desc = "Show full error message in floating window for the current line",
+        },
+
         -- Config
         ["<LocalLeader>z"] = { "<CMD>Lazy<CR>", desc = "Open Lazy configuration" },
 

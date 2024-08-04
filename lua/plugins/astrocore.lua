@@ -75,6 +75,13 @@ return {
 
         -- NeoTree
         ["<Leader>D"] = { "<cmd>:Neotree reveal<cr>", desc = "Reveal current buffer in Explorer" }, -- <Leader>o is the default, but this mapping is muscle memory from NERDTree
+
+        -- Open floating terminal
+        ["<C-t>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "Launch floating terminal" },
+      },
+      t = { -- Close floating terminal
+        ["<C-T>"] = { "<cmd>ToggleTerm<cr>" },
+      },
       i = { -- Insert mode mappings
         ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
         ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },

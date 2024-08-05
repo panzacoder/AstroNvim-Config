@@ -1,3 +1,14 @@
+--============================================================================--
+--
+-- PLUGIN DISABLED
+--
+--============================================================================--
+--
+-- This is the default file intended to be one option for configuring AstroNvim
+-- It can encapsulate all of your plugin modifications and additions in one
+-- file if you choose. I prefer to have each customization in its own file.
+--
+--------------------------------------------------------------------------------
 if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder

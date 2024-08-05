@@ -1,3 +1,12 @@
+--============================================================================--
+--
+-- PLUGIN DISABLED
+--
+--============================================================================--
+--
+-- This is the default AstroUI configuration.
+--
+--------------------------------------------------------------------------------
 if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroUI provides the basis for configuring the AstroNvim User Interface

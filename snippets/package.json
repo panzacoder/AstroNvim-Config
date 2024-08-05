@@ -1,0 +1,19 @@
+{
+  "name": "user_snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "all",
+        "path": "./todo_fixme_note.json"
+      },
+      {
+        "language": "lua",
+        "path": "./plugin_documentation.json",
+        "priority": 9999
+      }
+    ]
+  }
+}

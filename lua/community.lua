@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.editing-support.vim-move" }, -- "drag visuals" plugin. opt + j or k. Also supports h and l.
   { import = "astrocommunity.git.blame-nvim" },
   { import = "astrocommunity.git.diffview-nvim" },
+  { import = "astrocommunity.git.neogit" }, -- TODO: (2024-08-06) Jon => experimental git plugin neogit. Try it out and see if it's better than vim-figitive
   { import = "astrocommunity.git.octo-nvim" }, -- Code review. <Leader>O (capital o for Octo), list PRs. <Leader> [O]cto > [p]ull requests > [t] list open PRs
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },

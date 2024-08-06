@@ -47,6 +47,7 @@ return {
       -- first key is the mode
       n = {
         -- second key is the lefthand side of the map
+        ["QA"] = { "<cmd>qa<cr>", desc = "Close all buffers" },
         ["SS"] = { "<cmd>w<cr>", desc = "Save current buffer" },
 
         -- navigate buffer tabs

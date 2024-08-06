@@ -66,6 +66,7 @@ return {
         wrap = false, -- sets vim.opt.wrap
         virtualedit = "all", -- allows the cursor to go anywhere, not just the beginning of lines when moving with j and k
         shiftround = true, -- when indenting, round up or down to align with the nearest multiple of shiftwidth
+        iskeyword = vim.opt.iskeyword:append "-", -- append '-' to iskeyword
         listchars = { --Use the same symbols as TextMate for tabstops and EOLs
           tab = "▸ ",
           eol = "¬",

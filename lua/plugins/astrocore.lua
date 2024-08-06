@@ -71,6 +71,8 @@ return {
         ["<Leader>bt"] = { "<cmd>tabnew<cr>", desc = "New tab" },
       i = { -- Insert mode mappings
         ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
+        ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },
+        ["AA"] = { "<Esc>A", desc = "Move to end of line in insert mode" },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },

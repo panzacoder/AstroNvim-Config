@@ -7,6 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" }, -- Bottom status bar
   { import = "astrocommunity.completion.cmp-calc" }, -- Inline calculations
   { import = "astrocommunity.completion.cmp-spell" }, -- Inline spelling suggestions
   { import = "astrocommunity.completion.copilot-lua-cmp" }, -- Automatic code completion through copilot

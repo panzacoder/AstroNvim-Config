@@ -1,0 +1,14 @@
+#Git
+.git
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.null-ls*

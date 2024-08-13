@@ -10,9 +10,9 @@
 --
 -- This config overrides the default keymaps for moving windows around in Vim:
 --
---   <C-W>J - Move the current window all the way to the bottom
+--   <C-W>H - Move the current window all the way to the left
+--   <C-W>J - .......................................... bottom
 --   <C-W>K - .......................................... top
---   <C-W>H - .......................................... left
 --   <C-W>L - .......................................... right
 --
 -- The code will allow for repositioning a split to another location using
@@ -25,84 +25,53 @@
 --
 --------------------------------------------------------------------------------
 
+---@param direction string
+local function move_window(direction)
+  -- Mark the current position
+  local success, err = pcall(function() vim.cmd "normal! mR" end)
+  if not success then
+    print("Error setting mark: " .. tostring(err))
+    return
+  end
+
+  -- Check if NeoTree is open using the NeoTree API
+  local manager = require "neo-tree.sources.manager"
+  local renderer = require "neo-tree.ui.renderer"
+  local state = manager.get_state "filesystem"
+  local neotree_open = renderer.window_exists(state)
+
+  if neotree_open then vim.cmd "Neotree close" end
+
+  vim.cmd("wincmd " .. direction) -- Move the window in the specified direction
+
+  vim.schedule(function() vim.cmd "Neotree show" end)
+
+  -- Return to the marked position
+  success, err = pcall(function() vim.cmd "normal! 'R" end)
+  if not success then print("Error returning to mark: " .. tostring(err)) end
+end
+
 ---@type LazySpec
 return {
   {
+    vim.keymap.set("n", "<C-W>H", function()
+      vim.g.moving_window_c_hjkl = true
+      move_window "H"
+    end, { noremap = true, silent = true, desc = "Move window left accounting for NeoTree" }),
+
     vim.keymap.set("n", "<C-W>J", function()
-      -- Mark the current position
-      local success, err = pcall(vim.cmd, "normal! mR")
-      if not success then
-        print("Error setting mark: " .. err)
-        return
-      end
-
-      -- Check if NeoTree is open using the NeoTree API
-      local manager = require "neo-tree.sources.manager"
-      local renderer = require "neo-tree.ui.renderer"
-      local state = manager.get_state "filesystem"
-      local neotree_open = renderer.window_exists(state)
-
-      if neotree_open then vim.cmd "Neotree close" end
-
-      vim.cmd "wincmd J" -- Move the window down
-
-      if neotree_open then vim.schedule(function() vim.cmd "Neotree show" end) end
-
-      -- Return to the marked position
-      success, err = pcall(vim.cmd, "normal! 'R")
-      if not success then print("Error returning to mark: " .. err) end
+      move_window "J"
+      vim.g.moving_window_c_hjkl = true
     end, { noremap = true, silent = true, desc = "Move window down accounting for NeoTree" }),
 
     vim.keymap.set("n", "<C-W>K", function()
-      -- Mark the current position
-      local success, err = pcall(vim.cmd, "normal! mR")
-      if not success then
-        print("Error setting mark: " .. err)
-        return
-      end
-
-      -- Check if NeoTree is open using the NeoTree API
-      local manager = require "neo-tree.sources.manager"
-      local renderer = require "neo-tree.ui.renderer"
-      local state = manager.get_state "filesystem"
-      local neotree_open = renderer.window_exists(state)
-
-      if neotree_open then vim.cmd "Neotree close" end
-
-      vim.cmd "wincmd K" -- Move the window up
-
-      if neotree_open then vim.schedule(function() vim.cmd "Neotree show" end) end
-
-      -- Return to the marked position
-      success, err = pcall(vim.cmd, "normal! 'R")
-      if not success then print("Error returning to mark: " .. err) end
+      move_window "K"
+      vim.g.moving_window_c_hjkl = true
     end, { noremap = true, silent = true, desc = "Move window up accounting for NeoTree" }),
 
-    vim.keymap.set("n", "<C-W>H", function()
-      -- Mark the current position
-      local success, err = pcall(vim.cmd, "normal! mR")
-      if not success then
-        print("Error setting mark: " .. err)
-        return
-      end
-
-      -- Check if NeoTree is open using the NeoTree API
-      local manager = require "neo-tree.sources.manager"
-      local renderer = require "neo-tree.ui.renderer"
-      local state = manager.get_state "filesystem"
-      local neotree_open = renderer.window_exists(state)
-
-      if neotree_open then vim.cmd "Neotree close" end
-
-      vim.cmd "wincmd H" -- Move the window left
-
-      if neotree_open then vim.schedule(function() vim.cmd "Neotree show" end) end
-
-      -- Return to the marked position
-      success, err = pcall(vim.cmd, "normal! 'R")
-      if not success then print("Error returning to mark: " .. err) end
-    end, { noremap = true, silent = true, desc = "Move window left accounting for NeoTree" }),
-
-    -- NOTE: This mapping is not needed for moving right as the NeoTree window is on the left side of the screen
+    vim.keymap.set("n", "<C-W>L", function()
+      move_window "L"
+      vim.g.moving_window_c_hjkl = true
+    end, { noremap = true, silent = true, desc = "Move window right accounting for NeoTree" }),
   },
 }

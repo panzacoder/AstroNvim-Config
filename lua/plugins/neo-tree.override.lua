@@ -68,8 +68,25 @@ return {
 
       opts.group_empty_dirs = true
 
-      opts.event_handlers = {
-        -- See https://github.com/kwkarlwang/bufresize.nvim/pull/8
+      opts.event_handlers = vim.list_extend(opts.event_handlers or {}, {
+        {
+          event = "file_opened",
+          handler = function()
+            -- Check if neo-tree is the only buffer open
+            local buffers = vim.api.nvim_list_bufs()
+            local visible_buffers = 0
+            for _, buf in ipairs(buffers) do
+              if vim.api.nvim_buf_is_loaded(buf) and vim.bo[buf].buflisted then
+                visible_buffers = visible_buffers + 1
+              end
+            end
+
+            if visible_buffers == 1 then
+              require("neo-tree.command").execute { action = "show", dir = vim.fn.getcwd() }
+            end
+          end,
+        },
+        -- Keep existing event handlers
         {
           event = "neo_tree_window_before_open",
           handler = function()
@@ -114,7 +131,7 @@ return {
             require("bufresize").resize_close()
           end,
         },
-      }
+      })
 
       return opts
     end,

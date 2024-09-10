@@ -90,7 +90,9 @@ return {
 
         -- navigate buffer tabs
         [")"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+        ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["("] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+        ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
         -- Navigating actual tabs, positionined at the end of the tabline "named" 1,2,3,etc.
         ["<Leader>1"] = { "<cmd>tabprev<cr>", desc = "Prevtab" },
@@ -131,14 +133,19 @@ return {
       },
       t = { -- Close floating terminal
         ["<C-T>"] = { "<cmd>ToggleTerm<cr>" },
+        -- ["<C-t>"] = { "<cmd>ToggleTerm<cr>" },
       },
       v = { -- Visual mode mappings
         ["gq"] = { "<cmd> normal gw<cr>", desc = "Format" }, -- Add "gq" format back via an alias.
+        --   ["<A-j>"] = ":m '>+1<CR>gv-gv",
+        --  ["<A-k>"] = ":m '<-2<CR>gv-gv",
       },
       i = { -- Insert mode mappings
         ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
         ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },
         ["AA"] = { "<Esc>A", desc = "Move to end of line in insert mode" },
+        --    ["<A-j>"] = "<Esc>:m .+1<CR>==gi",
+        --    ["<A-k>"] = "<Esc>:m .-2<CR>==gi",
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },

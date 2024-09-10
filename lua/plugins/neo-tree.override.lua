@@ -43,15 +43,21 @@ return {
     },
     opts = function(_, opts)
       opts.window = vim.tbl_deep_extend("force", opts.window or {}, {
-        auto_expand_width = true,
+        width = 30,
+        -- auto_expand_width = true,
         mappings = {
           ["/"] = "noop", -- Disable the default mapping
+          ["<space>"] = false, -- disable space until we figure out which-key disabling
+          h = "prev_source",
+          l = "next_source",
+          o = "open",
+          O = "system_open",
         },
       })
 
       opts.filesystem = vim.tbl_deep_extend("force", opts.filesystem or {}, {
         filtered_items = {
-          visible = true,
+          visible = false,
           never_show = {
             ".DS_Store",
             "thumbs.db",

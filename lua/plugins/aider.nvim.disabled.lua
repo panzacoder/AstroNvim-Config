@@ -1,3 +1,4 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --============================================================================--
 --
 -- https://aider.chat/
@@ -63,17 +64,17 @@
 --
 --------------------------------------------------------------------------------
 
----@type LazySpec
-return {
-  -- "joshuavial/aider.nvim", -- FIXME: broken
-  -- "jondkinney/aider.nvim", -- use this fork until https://github.com/joshuavial/aider.nvim/pull/13 is merged
-  dir = "~/Code/aider.nvim",
-  config = function()
-    require("aider").setup {
-      auto_manage_context = true,
-      default_bindings = true,
-      debug = false,
-      vim = true,
-    }
-  end,
-}
+-- ---@type LazySpec
+-- return {
+--   -- "joshuavial/aider.nvim", -- FIXME: broken
+--   -- "jondkinney/aider.nvim", -- use this fork until https://github.com/joshuavial/aider.nvim/pull/13 is merged
+--   dir = "~/Code/aider.nvim",
+--   config = function()
+--     require("aider").setup {
+--       auto_manage_context = true,
+--       default_bindings = true,
+--       debug = false,
+--       vim = true,
+--     }
+--   end,
+-- }

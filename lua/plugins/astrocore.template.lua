@@ -141,7 +141,7 @@ return {
         --  ["<A-k>"] = ":m '<-2<CR>gv-gv",
       },
       i = { -- Insert mode mappings
-        ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
+        -- ["SS"] = { "<Esc><cmd>w<cr>", desc = "Save current buffer" },
         ["II"] = { "<Esc>I", desc = "Move to beginning of line in insert mode" },
         ["AA"] = { "<Esc>A", desc = "Move to end of line in insert mode" },
         --    ["<A-j>"] = "<Esc>:m .+1<CR>==gi",

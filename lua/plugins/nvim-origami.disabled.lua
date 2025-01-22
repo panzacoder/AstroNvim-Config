@@ -1,3 +1,4 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --============================================================================--
 --
 -- https://github.com/chrisgrieser/nvim-origami
@@ -31,10 +32,10 @@
 --------------------------------------------------------------------------------
 
 ---@type LazySpec
-return {
-  "chrisgrieser/nvim-origami",
-  event = "BufReadPost", -- later or on keypress would prevent saving folds
-  opts = {
-    hOnlyOpensOnFirstColumn = true,
-  }, -- an empty opts table is needed even when using default config
-}
+-- return {
+--   "chrisgrieser/nvim-origami",
+--   event = "BufReadPost", -- later or on keypress would prevent saving folds
+--   opts = {
+--     hOnlyOpensOnFirstColumn = true,
+--   }, -- an empty opts table is needed even when using default config
+-- }

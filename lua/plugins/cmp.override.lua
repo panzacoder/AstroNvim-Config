@@ -206,7 +206,7 @@ return { -- override nvim-cmp plugin
         end, { "i" }),
       },
       sources = cmp.config.sources {
-        { name = "luasnip", priority = 1000 },
+        -- { name = "luasnip", priority = 1000 },
         { name = "copilot", priority = 900 },
         { name = "nvim_lsp", priority = 800 },
         { name = "emoji", priority = 700 },
@@ -217,7 +217,7 @@ return { -- override nvim-cmp plugin
         format = function(entry, vim_item)
           vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
           vim_item.menu = ({
-            luasnip = "[Snippet]",
+            -- luasnip = "[Snippet]",
             copilot = "[Copilot]",
             nvim_lsp = "[LSP]",
             emoji = "[Emoji]",

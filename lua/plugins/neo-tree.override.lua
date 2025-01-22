@@ -61,10 +61,9 @@ return {
           never_show = {
             ".DS_Store",
             "thumbs.db",
-            ".cache",
-            ".git",
-            ".github",
           },
+          hide_gitignored = true,
+          hide_dotfiles = false,
         },
         follow_current_file = {
           enabled = true,

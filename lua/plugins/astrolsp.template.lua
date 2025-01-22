@@ -95,6 +95,13 @@ return {
         },
       },
     },
+    allow_filetypes = { -- enable format on save for specified filetypes only
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "json",
+    },
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
     -- on_attach = function(client, bufnr)
